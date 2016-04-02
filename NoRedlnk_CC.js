@@ -1,4 +1,4 @@
-var parse = require('csv-parse');
+const parse = require('csv-parse');
 const fs = require('fs');
 const readline = require('readline');
 
@@ -45,7 +45,7 @@ var parser = parse({delimiter: ','}, function(err, data) {
 fs.createReadStream(questionsFile).pipe(parser);
 
 var quiz = function() {
-  console.log(students);
+  // console.log(students);
 
   const quizLine = readline.createInterface(process.stdin, process.stdout);
 
@@ -60,7 +60,10 @@ var quiz = function() {
     // Test to see if input is valid
     if (Number.isInteger(response) && response > 0 ) {
 
-      console.log(selectQuestions(response));
+      // Only need to give the question IDs
+      selectQuestions(response).forEach(function(el) {
+        console.log(el[4]);
+      });
       quizLine.close();
     }
     else {
