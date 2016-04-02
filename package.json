@@ -1,0 +1,8 @@
+{
+  "name": "NoRedlnk_CC",
+  "version": "0.0.0",
+  "discription": "",
+  "dependencies": {
+    "csv-parse": "^1.0.2"
+  }
+}
